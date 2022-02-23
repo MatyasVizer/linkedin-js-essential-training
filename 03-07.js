@@ -12,7 +12,10 @@ const myCar1 = {
     turbo: "yes" 
 }
 
+//adding methods
+
 const myCar2 = {
+    stage: 0,
     brand: "BMW",
     generation: "E60",
     model: "5 Series",
@@ -20,6 +23,40 @@ const myCar2 = {
     displacement: 5,
     cylinders: 10,
     drivetrain: "RWD",
-    horsepower: 750,
-    turbo: "yes" 
+    horsepower: 600,
+    turbo: false,
+    stageTuning: function() {
+        switch (this.stage) {
+            case 0:
+                this.stage = 1
+                this.horsepower += (this.horsepower/100*10)
+                break;
+            case 1:
+                this.stage = 2
+                this.horsepower += (this.horsepower/100*10)
+                break;
+            case 2:
+                this.stage = 3
+                this.horsepower += (this.horsepower/100*10)
+                break;
+            case 3:
+                this.stage = 3
+                this.horsepower += (this.horsepower/100*10)
+        }
+    }
 }
+
+console.log(myCar2.stage)
+console.log(myCar2.horsepower)
+myCar2.stageTuning
+console.log(myCar2.stage)
+console.log(myCar2.horsepower)
+myCar2.stageTuning
+myCar2.stageTuning
+console.log(myCar2.stage)
+console.log(myCar2.horsepower)
+myCar2.stageTuning
+myCar2.stageTuning
+myCar2.stageTuning
+console.log(myCar2.stage)
+console.log(myCar2.horsepower)
